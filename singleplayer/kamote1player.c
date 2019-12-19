@@ -136,6 +136,7 @@ int main() {
   initscr();			/* Start curses mode */
   curs_set(false);
   noecho();
+  keypad(stdscr, TRUE);
 
 
   /* MAIN LOOP */
@@ -153,19 +154,19 @@ int main() {
     if (kbhit()) {
       keyPressed = getch();
 
-      if (keyPressed == 'w' && !(dirY == 1 && dirX == 0)) {
+      if (keyPressed == KEY_UP && !(dirY == 1 && dirX == 0)) {
         dirY = -1;
         dirX = 0;
       }
-      if (keyPressed == 's' && !(dirY == -1 && dirX == 0)) {
+      if (keyPressed == KEY_DOWN && !(dirY == -1 && dirX == 0)) {
         dirY = 1;
         dirX = 0;
       }
-      if (keyPressed == 'a' && !(dirY == 0 && dirX == 1)) {
+      if (keyPressed == KEY_LEFT && !(dirY == 0 && dirX == 1)) {
         dirY = 0;
         dirX = -1;
       }
-      if (keyPressed == 'd' && !(dirY == 0 && dirX == -1)) {
+      if (keyPressed == KEY_RIGHT && !(dirY == 0 && dirX == -1)) {
         dirY = 0;
         dirX = 1;
       }
