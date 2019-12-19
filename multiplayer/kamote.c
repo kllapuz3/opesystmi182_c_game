@@ -53,13 +53,13 @@ main() {
       case 0x1B:    endwin(); end++; break;
     }
     erase();
-    mvprintw(2,scr.x/2-2,"%i | %i",b1.c,b2.c);
+    mvprintw(2,scr.x/2-2,"%i || %i",b1.c,b2.c);
     mvvline(0,scr.x/2,ACS_VLINE,scr.y);
     attron(COLOR_PAIR(1));
     mvprintw(b.y,b.x,"o");
     for(i=-1;i<2;i++){
-      mvprintw(b1.y+i,b1.x,"|");
-      mvprintw(b2.y+i,b2.x,"|");}
+      mvprintw(b1.y+i,b1.x,"||");
+      mvprintw(b2.y+i,b2.x,"||");}
     attroff(COLOR_PAIR(1));
   }
 }
